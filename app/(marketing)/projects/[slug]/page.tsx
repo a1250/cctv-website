@@ -344,6 +344,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 padding: "24px 0",
                 borderTop: "0.5px solid rgba(212,184,150,0.30)",
               }}
+              className="proj-sidebar"
             >
               {/* Telemetry header */}
               <div
@@ -467,7 +468,7 @@ export default async function ProjectDetailPage({ params }: PageProps) {
             </aside>
 
             {/* Right — editorial content */}
-            <div style={{ display: "flex", flexDirection: "column", gap: 56 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 56 }} className="proj-editorial-right">
               {/* The Challenge */}
               <article>
                 <div
@@ -491,10 +492,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     fontFamily: "var(--font-heading, 'Cormorant Garamond', serif)",
                     fontWeight: 300,
                     fontSize: "clamp(22px, 2.4vw, 34px)",
-                    lineHeight: 1.28,
+                    lineHeight: 1.42,
                     color: "var(--ink)",
-                    margin: "0 0 20px",
+                    margin: 0,
                   }}
+                  className="proj-challenge-heading"
                 >
                   A property of this scale demands invisible integration — no visible
                   hardware, no compromises to the design intent.
@@ -504,10 +506,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     fontFamily: "var(--font-sans)",
                     fontWeight: 300,
                     fontSize: 15,
-                    lineHeight: 1.72,
+                    lineHeight: 1.78,
                     color: "var(--ink-2)",
                     margin: 0,
                   }}
+                  className="proj-body-para"
                 >
                   {project.shortDescription} The scope required coordinating with the
                   lead architect, interior design team, and structural engineers to
@@ -539,10 +542,11 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                     fontFamily: "var(--font-sans)",
                     fontWeight: 300,
                     fontSize: 15,
-                    lineHeight: 1.72,
+                    lineHeight: 1.78,
                     color: "var(--ink-2)",
                     margin: 0,
                   }}
+                  className="proj-body-para"
                 >
                   Working from pre-construction drawings, we developed a complete
                   infrastructure plan mapping every conduit run, equipment location, and
@@ -764,20 +768,31 @@ export default async function ProjectDetailPage({ params }: PageProps) {
         .proj-back-btn:hover { background: var(--accent-soft) !important; }
         .proj-planner-btn:hover { border-color: rgba(255,255,255,0.55) !important; }
         .gallery-card:hover .gallery-card-bg { transform: scale(1.04); }
+
+        /* ── Mobile layout fixes ── */
         @media (max-width: 920px) {
-          .proj-editorial-responsive { grid-template-columns: 1fr !important; gap: 40px !important; }
+          .proj-editorial-responsive { grid-template-columns: 1fr !important; gap: 48px !important; }
+          /* Disable sticky on single-column layout — prevents sidebar clipping content below */
+          .proj-sidebar { position: static !important; top: auto !important; }
           .proj-body-responsive { padding: 72px 28px !important; }
           .proj-hero-content-responsive { padding: 0 28px 56px !important; }
+          /* Reduce article gap on tablet */
+          .proj-editorial-right { gap: 44px !important; }
         }
         @media (max-width: 720px) {
           .proj-gallery-responsive { grid-template-columns: 1fr 1fr !important; }
           .proj-result-cards-responsive { grid-template-columns: 1fr !important; }
           .proj-hero-content-responsive { padding: 0 22px 48px !important; }
-          .proj-body-responsive { padding: 56px 22px !important; }
+          .proj-body-responsive { padding: 48px 22px !important; }
           .proj-cta-bar-responsive { padding: 48px 22px !important; flex-direction: column; align-items: flex-start; }
+          /* Tighter article gap on mobile, more heading room */
+          .proj-editorial-right { gap: 36px !important; }
+          .proj-challenge-heading { margin-bottom: 20px !important; }
+          .proj-body-para { margin-top: 16px !important; }
         }
         @media (max-width: 480px) {
           .proj-gallery-responsive { grid-template-columns: 1fr !important; }
+          .proj-editorial-right { gap: 32px !important; }
         }
       `}</style>
     </>

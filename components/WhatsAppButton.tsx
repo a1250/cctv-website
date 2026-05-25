@@ -74,7 +74,12 @@ export default function WhatsAppButton() {
           100% { transform: scale(1.35); opacity: 0; }
         }
         @media (max-width: 480px) {
-          .wa-float-btn { bottom: 20px !important; right: 20px !important; width: 50px !important; height: 50px !important; }
+          .wa-float-btn {
+            bottom: calc(20px + env(safe-area-inset-bottom, 0px)) !important;
+            right: 18px !important;
+            width: 50px !important;
+            height: 50px !important;
+          }
         }
       `}</style>
     </a>
