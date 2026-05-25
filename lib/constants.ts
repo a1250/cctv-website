@@ -142,10 +142,10 @@ export const SERVICES = [
   },
   {
     slug: "home-cinema" as ServiceSlug,
-    name: "Private Home Cinema",
-    shortDescription: "Reference-grade projection, calibrated screens, and Dolby Atmos object-based audio — a true cinematic space, at home.",
+    name: "Bespoke Theater Rooms",
+    shortDescription: "Design and calibration of elite private theater rooms featuring completely flush-mounted in-wall speakers, high-performance sound isolation, and architectural fabric acoustic paneling for an uncompromised residential viewing experience.",
     description:
-      "A true home cinema is an acoustic and visual engineering project. We handle every layer — from room-within-a-room construction for soundproofing, to 4K laser projection, Dolby Atmos speaker placement, motorized seating, and full lighting scene control — creating a theatrical experience tailored to you.",
+      "Design and calibration of elite private theater rooms featuring completely flush-mounted in-wall speakers, high-performance sound isolation, and architectural fabric acoustic paneling for an uncompromised residential viewing experience.",
     features: [
       "4K laser projector & 170″ screen",
       "Dolby Atmos 9.2.6 audio design",
@@ -155,8 +155,8 @@ export const SERVICES = [
       "Full lighting scene control",
     ],
     icon: "Tv",
-    unsplashId: "/images/private-home-cinema.png",
-    heroUnsplashId: "/images/private-home-cinema.png",
+    unsplashId: "/images/bespoke-theater-rooms.png",
+    heroUnsplashId: "/images/bespoke-theater-rooms.png",
   },
 ] as const;
 
