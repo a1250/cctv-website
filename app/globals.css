@@ -1,26 +1,254 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ── Class-based dark mode (Tailwind v4) ── */
+@custom-variant dark (&:is(.dark *));
 
+/* ────────────────────────────────────────────────────────────
+   @theme inline — maps CSS vars → Tailwind utility classes
+   Use logical spacing (ps-/pe-/ms-/me-) everywhere, never pl-/pr-
+   ──────────────────────────────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Semantic surface tokens */
+  --color-background:           var(--background);
+  --color-foreground:           var(--foreground);
+  --color-card:                 var(--card);
+  --color-card-foreground:      var(--card-foreground);
+  --color-popover:              var(--popover);
+  --color-popover-foreground:   var(--popover-foreground);
+  --color-primary:              var(--primary);
+  --color-primary-foreground:   var(--primary-foreground);
+  --color-secondary:            var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted:                var(--muted);
+  --color-muted-foreground:     var(--muted-foreground);
+  --color-accent:               var(--accent);
+  --color-accent-foreground:    var(--accent-foreground);
+  --color-destructive:          var(--destructive);
+  --color-border:               var(--border);
+  --color-input:                var(--input);
+  --color-ring:                 var(--ring);
+
+  /* ── Brand luxury tokens ── */
+  /* champagne ≈ #dec29b — warm champagne gold */
+  --color-champagne:            var(--champagne);
+  --color-champagne-muted:      var(--champagne-muted);
+  --color-champagne-fg:         var(--champagne-fg);
+  /* Glassmorphism */
+  --color-glass:                var(--glass);
+  --color-glass-border:         var(--glass-border);
+
+  /* Radius scale */
+  --radius-sm:  calc(var(--radius) * 0.6);
+  --radius-md:  calc(var(--radius) * 0.8);
+  --radius-lg:  var(--radius);
+  --radius-xl:  calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+
+  /* Font stacks — set by layout.tsx via next/font CSS vars */
+  --font-sans:    var(--font-manrope);
+  --font-heading: var(--font-cormorant);
+  --font-mono:    var(--font-jetbrains);
+  --font-brand:   var(--font-cinzel);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ────────────────────────────────────────────────────────────
+   Light fallback — minimal, site operates in dark mode
+   ──────────────────────────────────────────────────────────── */
+:root {
+  --background:              oklch(0.99 0 0);
+  --foreground:              oklch(0.10 0 0);
+  --card:                    oklch(0.96 0 0);
+  --card-foreground:         oklch(0.10 0 0);
+  --popover:                 oklch(0.96 0 0);
+  --popover-foreground:      oklch(0.10 0 0);
+  --primary:                 oklch(0.81 0.07 72);    /* champagne */
+  --primary-foreground:      oklch(0.09 0.02 265);
+  --secondary:               oklch(0.92 0 0);
+  --secondary-foreground:    oklch(0.20 0 0);
+  --muted:                   oklch(0.94 0 0);
+  --muted-foreground:        oklch(0.55 0 0);
+  --accent:                  oklch(0.92 0 0);
+  --accent-foreground:       oklch(0.20 0 0);
+  --destructive:             oklch(0.63 0.24 27);
+  --border:                  oklch(0.88 0 0);
+  --input:                   oklch(0.88 0 0);
+  --ring:                    oklch(0.81 0.07 72);
+  --radius:                  0.625rem;
+
+  /* Brand */
+  --champagne:               oklch(0.81 0.07 72);
+  --champagne-muted:         oklch(0.81 0.07 72 / 15%);
+  --champagne-fg:            oklch(0.09 0.02 265);
+  --glass:                   oklch(0 0 0 / 4%);
+  --glass-border:            oklch(0 0 0 / 8%);
+}
+
+/* ────────────────────────────────────────────────────────────
+   Dark Luxury Theme — Midnight Charcoal Slate base
+   Background ≈ #0a0d14 (deep navy-charcoal)
+   Champagne ≈ #dec29b → oklch(0.81 0.07 72)
+   ──────────────────────────────────────────────────────────── */
+.dark {
+  /* Surfaces — near-pure black base matching design #050505 */
+  --background:              oklch(0.05 0 0);         /* ≈ #050505 near-black */
+  --foreground:              oklch(0.95 0.005 264);   /* near-white with cool tint  */
+
+  --card:                    oklch(0.14 0.022 265);   /* slightly elevated surface  */
+  --card-foreground:         oklch(0.95 0.005 264);
+
+  --popover:                 oklch(0.14 0.022 265);
+  --popover-foreground:      oklch(0.95 0.005 264);
+
+  /* Primary = champagne gold */
+  --primary:                 oklch(0.81 0.07 72);
+  --primary-foreground:      oklch(0.09 0.02 265);
+
+  /* Secondary = elevated slate */
+  --secondary:               oklch(0.20 0.018 265);
+  --secondary-foreground:    oklch(0.95 0.005 264);
+
+  /* Muted = slate-700 zone */
+  --muted:                   oklch(0.22 0.016 265);
+  --muted-foreground:        oklch(0.60 0.012 264);
+
+  /* Accent = subtle champagne wash */
+  --accent:                  oklch(0.81 0.07 72 / 12%);
+  --accent-foreground:       oklch(0.81 0.07 72);
+
+  --destructive:             oklch(0.63 0.24 27);
+
+  /* Borders — near-invisible white lines */
+  --border:                  oklch(1 0 0 / 8%);
+  --input:                   oklch(1 0 0 / 10%);
+  --ring:                    oklch(0.81 0.07 72 / 55%);
+  --radius:                  0.625rem;
+
+  /* Brand luxury tokens */
+  --champagne:               #dec29b;
+  --champagne-muted:         rgba(222, 194, 155, 0.15);
+  --champagne-fg:            oklch(0.09 0.02 265);
+  --glass:                   oklch(1 0 0 / 4%);
+  --glass-border:            oklch(1 0 0 / 8%);
+
+  /* Design system ink / line tokens */
+  --ink:                     rgba(255, 255, 255, 0.96);
+  --ink-2:                   rgba(241, 241, 241, 0.88);
+  --ink-3:                   rgba(255, 255, 255, 0.58);
+  --line:                    rgba(255, 255, 255, 0.10);
+  --line-strong:             rgba(255, 255, 255, 0.30);
+  --accent-soft:             #eedcbc;
+  --nav-h:                   70px;
+}
+
+/* ────────────────────────────────────────────────────────────
+   Base layer
+   ──────────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading, var(--font-sans));
+    letter-spacing: -0.01em;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ────────────────────────────────────────────────────────────
+   Utility classes
+   ──────────────────────────────────────────────────────────── */
+@layer utilities {
+  /* Glassmorphism card surface */
+  .glass {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  .glass-card {
+    background: oklch(1 0 0 / 4%);
+    border: 1px solid oklch(1 0 0 / 8%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+  /* Champagne text gradient */
+  .text-champagne-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.81 0.07 72) 0%,
+      oklch(0.92 0.04 80) 50%,
+      oklch(0.75 0.09 65) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  /* Contact form input focus ring */
+  .contact-input:focus {
+    outline: none;
+    border-color: rgba(222,194,155,0.70) !important;
+    background: rgba(255,255,255,0.08) !important;
+    box-shadow: 0 0 0 1px rgba(222,194,155,0.22), 0 0 20px rgba(222,194,155,0.10);
+  }
+  .contact-input::placeholder { color: rgba(255,255,255,0.35); }
+  .contact-submit-btn:hover:not(:disabled) {
+    background: var(--accent-soft) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 0 30px rgba(222,194,155,0.42), 0 18px 50px rgba(222,194,155,0.24) !important;
+  }
+  .contact-reset-btn:hover { color: var(--ink) !important; border-color: rgba(255,255,255,0.60) !important; }
+  @media (max-width: 680px) {
+    .contact-row-responsive { grid-template-columns: 1fr !important; }
+    .contact-form-glass { padding: 32px 24px 36px !important; }
+  }
+
+  /* Subtle ambient glow used by AmbientBackground */
+  .ambient-glow {
+    background: radial-gradient(
+      ellipse 80% 60% at 50% -10%,
+      oklch(0.81 0.07 72 / 8%) 0%,
+      transparent 70%
+    );
+  }
+
+  /* Grain overlay animation */
+  .grain-overlay {
+    animation: grainShift 1.6s steps(6) infinite;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────
+   Keyframe animations
+   ──────────────────────────────────────────────────────────── */
+@keyframes contactSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes grainShift {
+  0%   { transform: translate(0, 0); }
+  20%  { transform: translate(-3%, 2%); }
+  40%  { transform: translate(2%, -1%); }
+  60%  { transform: translate(-1%, 3%); }
+  80%  { transform: translate(3%, 1%); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes scrollPulse {
+  0%, 100% {
+    transform: scaleY(1);
+    transform-origin: top;
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(0.4);
+    transform-origin: top;
+    opacity: 0.4;
+  }
 }

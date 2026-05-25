@@ -1,0 +1,503 @@
+/**
+ * lib/constants.ts
+ *
+ * Single source of truth for ALL UI strings, site data, and configuration.
+ * No hardcoded text belongs in components — import from here.
+ * Designed for future i18n: swap this file per locale.
+ */
+
+// ─────────────────────────────────────────────────────────
+// Company
+// ─────────────────────────────────────────────────────────
+
+export const COMPANY = {
+  name: "360 Integrated Systems",
+  tagline: "Precision. Performance. Presence.",
+  phone: "+1 (800) 555-0199",
+  email: "projects@360integrated.com",
+  address: "Beverly Hills, CA 90210",
+  logoSrc: "/logo.png",
+  logoEmblemSrc: "/logo-emblem.png",
+  social: {
+    instagram: "https://instagram.com/360integrated",
+    linkedin: "https://linkedin.com/company/360integrated",
+  },
+} as const;
+
+// ─────────────────────────────────────────────────────────
+// Navigation
+// ─────────────────────────────────────────────────────────
+
+export const NAV_LINKS = [
+  { label: "Services", href: "/services" },
+  { label: "Projects", href: "/projects" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
+] as const;
+
+export const NAV_CTA = { label: "Start Your Project", href: "/planner" } as const;
+
+// ─────────────────────────────────────────────────────────
+// Services (i18n-ready — slugs are URL keys, never translated)
+// ─────────────────────────────────────────────────────────
+
+export type ServiceSlug =
+  | "cameras"
+  | "alarm-systems"
+  | "intercom-access"
+  | "networks-wifi"
+  | "sound-systems"
+  | "home-cinema";
+
+export const SERVICES = [
+  {
+    slug: "cameras" as ServiceSlug,
+    name: "Surveillance & Analytics",
+    shortDescription: "Discreet camera systems with AI-driven event detection and forensic-grade recording — engineered to disappear into the architecture.",
+    description:
+      "We design and install enterprise-grade camera systems that go far beyond passive recording. Our solutions leverage AI analytics, license plate recognition, facial detection, and behavioral monitoring to give you a proactive security layer — not just a record of what happened.",
+    features: [
+      "4K & thermal camera systems",
+      "AI-powered behavioral analytics",
+      "License plate recognition (LPR)",
+      "Remote access & live monitoring",
+      "Cloud & on-premise NVR options",
+      "Concealed & aesthetic mounting",
+    ],
+    icon: "Camera",
+    unsplashId: "photo-1557597774-9d273605dfa9",
+    heroUnsplashId: "photo-1558002038-1055907df827",
+  },
+  {
+    slug: "alarm-systems" as ServiceSlug,
+    name: "Smart Intrusion Alarms",
+    shortDescription: "Multi-zone perimeter protection woven into the residence routine, with personal device alerting and silent escalation paths.",
+    description:
+      "From perimeter detection to interior motion analytics, our alarm systems are engineered to be nearly invisible and completely intelligent. Integration with smart home platforms means arming, disarming, and alert routing happen automatically — without you lifting a finger.",
+    features: [
+      "Pet-immune motion detectors",
+      "Glass-break & vibration sensors",
+      "24/7 professional monitoring",
+      "Geo-fence auto arm/disarm",
+      "Tamper-proof panels",
+      "Smart home & voice integration",
+    ],
+    icon: "Shield",
+    unsplashId: "photo-1582139329536-e7284fece509",
+    heroUnsplashId: "photo-1560185007-c5ca9d2c014d",
+  },
+  {
+    slug: "intercom-access" as ServiceSlug,
+    name: "Access Control & Intercom",
+    shortDescription: "Architectural door stations, biometric entry, and HD video intercom delivered over private, hardened networks.",
+    description:
+      "We replace outdated keys and buzzers with sophisticated, touchless access control. Video intercoms with facial recognition, mobile-credential readers, and enterprise-grade audit trails — all managed from a single dashboard accessible from anywhere in the world.",
+    features: [
+      "Facial & fingerprint recognition",
+      "Mobile credential (BLE/NFC)",
+      "Video intercom with HD display",
+      "Multi-site access management",
+      "Visitor management portal",
+      "Full audit trail & reporting",
+    ],
+    icon: "Fingerprint",
+    unsplashId: "photo-1563013544-824ae1b704d3",
+    heroUnsplashId: "photo-1506157786151-b8491531f063",
+  },
+  {
+    slug: "networks-wifi" as ServiceSlug,
+    name: "Enterprise Networking",
+    shortDescription: "Carrier-class Wi-Fi, structured cabling, and SD-WAN built for whole-estate reliability and absolute privacy.",
+    description:
+      "Your smart home is only as smart as its network. We design and deploy carrier-grade Wi-Fi 7 mesh networks with wired backbone infrastructure, VLAN segmentation for security, and zero-lag coverage across every square foot — indoors, outdoors, and underground.",
+    features: [
+      "Wi-Fi 7 (802.11be) access points",
+      "Structured CAT6A/Fiber cabling",
+      "VLAN segmentation & firewall",
+      "4G/5G failover redundancy",
+      "Whole-property outdoor coverage",
+      "Network monitoring & SLA",
+    ],
+    icon: "Wifi",
+    unsplashId: "photo-1558494949-ef010cbdcc31",
+    heroUnsplashId: "photo-1544383835-bda2bc66a55d",
+  },
+  {
+    slug: "sound-systems" as ServiceSlug,
+    name: "Bespoke Architectural Audio",
+    shortDescription: "Invisible in-wall and in-ceiling speakers, tuned per room by certified acousticians for reference performance.",
+    description:
+      "We integrate premium distributed audio systems from Sonos, Bowers & Wilkins, and KEF that deliver concert-hall clarity in every room. Whether you want room-by-room control, synchronized whole-home audio, or a dedicated dedicated listening room, we design it to disappear into the architecture.",
+    features: [
+      "Sonos & B&W system integration",
+      "In-ceiling & in-wall speakers",
+      "Outdoor weatherproof audio",
+      "Multi-zone independent control",
+      "Voice & app control",
+      "Acoustic room calibration",
+    ],
+    icon: "Music",
+    unsplashId: "photo-1545454675-3531b543be5d",
+    heroUnsplashId: "photo-1618221195710-dd6b41faaea6",
+  },
+  {
+    slug: "home-cinema" as ServiceSlug,
+    name: "Private Home Cinema",
+    shortDescription: "Reference-grade projection, calibrated screens, and Dolby Atmos object-based audio — a true cinematic space, at home.",
+    description:
+      "A true home cinema is an acoustic and visual engineering project. We handle every layer — from room-within-a-room construction for soundproofing, to 4K laser projection, Dolby Atmos speaker placement, motorized seating, and full lighting scene control — creating a theatrical experience tailored to you.",
+    features: [
+      "4K laser projector & 170″ screen",
+      "Dolby Atmos 9.2.6 audio design",
+      "Acoustic room treatment",
+      "Room-within-a-room soundproofing",
+      "Motorized seating & drapery",
+      "Full lighting scene control",
+    ],
+    icon: "Tv",
+    unsplashId: "photo-1586023492125-27b2c045efd7",
+    heroUnsplashId: "photo-1595769816263-9b910be24d5f",
+  },
+] as const;
+
+// ─────────────────────────────────────────────────────────
+// Mock Projects (for gallery & case studies)
+// ─────────────────────────────────────────────────────────
+
+export const PROJECTS = [
+  {
+    slug: "obsidian-villa",
+    title: "The Obsidian Villa",
+    category: "Residential",
+    kind: "Smart Automation & CCTV",
+    services: ["cameras", "alarm-systems", "networks-wifi", "sound-systems"] as ServiceSlug[],
+    location: "Bel-Air, Los Angeles",
+    loc: "COASTAL · PRIVATE",
+    meta: "2 SITES · 47 ZONES · 2025",
+    year: "2025",
+    shortDescription: "Full-estate integration: 47-zone CCTV with AI analytics, multi-zone audio, and Wi-Fi 7 mesh across 18,000 sq ft.",
+    tint: "#0e1626",
+    unsplashId: "/projects/obsidian/hero.jpg",
+    galleryUnsplashIds: [
+      "/projects/obsidian/1.jpg",
+      "/projects/obsidian/2.jpg",
+      "/projects/obsidian/3.jpg",
+      "/projects/obsidian/4.jpg",
+      "/projects/obsidian/5.jpg",
+    ],
+    featured: true,
+  },
+  {
+    slug: "slate-penthouse",
+    title: "The Slate Penthouse",
+    category: "Residential",
+    kind: "Dolby Atmos Home Theater",
+    services: ["home-cinema", "sound-systems", "intercom-access"] as ServiceSlug[],
+    location: "Santa Monica, CA",
+    loc: "METROPOLITAN · 56F",
+    meta: "1 SITE · 11.4.6 · 2025",
+    year: "2025",
+    shortDescription: "Dolby Atmos 11.4.6 screening room and distributed audio for a 56th-floor penthouse.",
+    tint: "#1a1410",
+    unsplashId: "/projects/slate/hero.jpg",
+    galleryUnsplashIds: [
+      "/projects/slate/1.jpg",
+      "/projects/slate/2.jpg",
+      "/projects/slate/3.jpg",
+      "/projects/slate/4.jpg",
+    ],
+    featured: true,
+  },
+  {
+    slug: "beverly-hills-hotel",
+    title: "Luxury Boutique Hotel",
+    category: "Hospitality",
+    kind: "Access Control & Surveillance",
+    services: ["cameras", "intercom-access", "networks-wifi"] as ServiceSlug[],
+    location: "Beverly Hills, CA",
+    loc: "HOSPITALITY · COMMERCIAL",
+    meta: "1 SITE · 120 ROOMS · 2023",
+    year: "2023",
+    shortDescription: "Enterprise access control and surveillance across 120 rooms with guest-facing mobile credentials.",
+    tint: "#131018",
+    unsplashId: "photo-1566073771259-6a8506099945",
+    galleryUnsplashIds: [
+      "photo-1542314831-068cd1dbfeeb",
+      "photo-1571896349842-33c89424de2d",
+      "photo-1590490360182-c33d57733427",
+      "photo-1551882547-ff40c63fe5fa",
+      "photo-1520250497591-112f2f40a3f4",
+    ],
+    featured: false,
+  },
+  {
+    slug: "malibu-coastal-estate",
+    title: "Malibu Coastal Estate",
+    category: "Residential",
+    kind: "Architectural Audio & Cinema",
+    services: ["home-cinema", "sound-systems", "alarm-systems"] as ServiceSlug[],
+    location: "Malibu, CA",
+    loc: "COASTAL · PRIVATE",
+    meta: "1 SITE · 7500 SQFT · 2024",
+    year: "2024",
+    shortDescription: "Whole-estate distributed audio and a dedicated Dolby Atmos cinema for a beachfront estate.",
+    tint: "#0e1a14",
+    unsplashId: "photo-1512917774080-9991f1c4c750",
+    galleryUnsplashIds: [
+      "photo-1613490493576-7fde63acd811",
+      "photo-1564013799919-ab600027ffc6",
+      "photo-1613977257363-707ba9348227",
+      "photo-1512915922686-57c11dde9b6b",
+      "photo-1600585154526-990dced4db0d",
+    ],
+    featured: false,
+  },
+] as const;
+
+// ─────────────────────────────────────────────────────────
+// UI Strings — Homepage
+// ─────────────────────────────────────────────────────────
+
+export const HOME_STRINGS = {
+  hero: {
+    eyebrow: "360 · Est. 2014",
+    headline: "Smart Integration.",
+    headlineAccent: "Cinematic Luxury.",
+    subheadline:
+      "Bespoke low-voltage systems engineered for elite residences. Surveillance, automated security, enterprise networking, and immersive home cinema.",
+    primaryCta: "Launch Project Planner",
+    secondaryCta: "Explore Solutions",
+    telemetry: {
+      bl: { dim: "Ch · A", label: "Midnight · AMBIENT" },
+      br: { dim: "Dolby · Atmos · Ready", label: "v1.0 — 2026" },
+    },
+    scrollLabel: "Scroll",
+  },
+  services: {
+    eyebrow: "01 — Capabilities",
+    title: "Integrated",
+    titleAccent: "solutions.",
+    subtitle: "Six verticals. One seamless ecosystem.",
+  },
+  whyUs: {
+    eyebrow: "02 — The Standard",
+    title: "Engineered around",
+    titleAccent: "your residence.",
+    pillars: [
+      {
+        num: "01",
+        title: "Tailored Engineering",
+        description:
+          "Systems custom-designed alongside your architects and interior designers — no compromises to the architectural intent, no visible compromises ever.",
+      },
+      {
+        num: "02",
+        title: "Flawless Craftsmanship",
+        description:
+          "Documented, military-grade cable management and equipment racks, photographed and signed off at every stage of installation.",
+      },
+      {
+        num: "03",
+        title: "White-Glove Support",
+        description:
+          "Dedicated 24/7 priority response, proactive system monitoring, and concierge-level account management for the life of the residence.",
+      },
+    ],
+  },
+  featuredProjects: {
+    eyebrow: "03 — Recent Work",
+    title: "Featured",
+    titleAccent: "projects.",
+    cta: "View All Projects",
+  },
+  cta: {
+    eyebrow: "Begin the conversation",
+    titleBefore: "Ready to",
+    titleAccent: "elevate",
+    titleAfter: "your space?",
+    subtitle:
+      "A 45-minute discovery call with our design engineering team. No deck, no script — your residence, your ambition.",
+    primaryCta: "Launch Project Planner",
+  },
+} as const;
+
+// ─────────────────────────────────────────────────────────
+// UI Strings — Services
+// ─────────────────────────────────────────────────────────
+
+export const SERVICES_STRINGS = {
+  overview: {
+    eyebrow: "Our Services",
+    title: "What We Integrate",
+    subtitle: "Six specialized disciplines — each engineered to the highest standard, all working in harmony.",
+  },
+  serviceHero: {
+    breadcrumbRoot: "Services",
+    ctaLabel: "Get a Quote",
+    plannerLabel: "Use Project Planner",
+  },
+} as const;
+
+// ─────────────────────────────────────────────────────────
+// UI Strings — Projects
+// ─────────────────────────────────────────────────────────
+
+export const PROJECTS_STRINGS = {
+  eyebrow: "Portfolio",
+  title: "Our Work",
+  subtitle: "A curated selection of projects across residential, commercial, and hospitality sectors.",
+  filterAll: "All",
+  filterResidential: "Residential",
+  filterCommercial: "Commercial",
+  filterHospitality: "Hospitality",
+} as const;
+
+// ─────────────────────────────────────────────────────────
+// UI Strings — Planner Wizard
+// ─────────────────────────────────────────────────────────
+
+export const PLANNER_STRINGS = {
+  pageTitle: "Project Planner",
+  pageSubtitle: "Tell us about your project in 5 steps and we'll tailor a solution just for you.",
+  steps: {
+    services: {
+      title: "Which services interest you?",
+      subtitle: "Select all that apply.",
+    },
+    propertyType: {
+      title: "What type of property is this for?",
+      subtitle: "This helps us recommend the right approach.",
+      options: [
+        { value: "residential-new", label: "New Residential Build" },
+        { value: "residential-existing", label: "Existing Residence" },
+        { value: "commercial", label: "Commercial / Office" },
+        { value: "hospitality", label: "Hotel / Hospitality" },
+        { value: "other", label: "Other" },
+      ],
+    },
+    budget: {
+      title: "What's your approximate budget?",
+      subtitle: "We work across a wide range — all budgets are welcome.",
+      options: [
+        { value: "under-25k", label: "Under $25,000" },
+        { value: "25k-75k", label: "$25,000 – $75,000" },
+        { value: "75k-250k", label: "$75,000 – $250,000" },
+        { value: "250k-plus", label: "$250,000+" },
+        { value: "unsure", label: "Not sure yet" },
+      ],
+    },
+    timeline: {
+      title: "When do you need the project completed?",
+      subtitle: "We'll plan resources accordingly.",
+      options: [
+        { value: "asap", label: "As soon as possible" },
+        { value: "1-3-months", label: "Within 1–3 months" },
+        { value: "3-6-months", label: "Within 3–6 months" },
+        { value: "6-plus-months", label: "6+ months from now" },
+        { value: "flexible", label: "Flexible / Not sure" },
+      ],
+    },
+    contact: {
+      title: "How should we reach you?",
+      subtitle: "A senior specialist will follow up within 24 hours.",
+      fields: {
+        name: "Full Name",
+        email: "Email Address",
+        phone: "Phone Number",
+        notes: "Additional Notes (optional)",
+        notesPlaceholder: "Tell us more about your project, property size, or any specific requirements...",
+      },
+    },
+  },
+  navigation: {
+    back: "Back",
+    next: "Next Step",
+    submit: "Submit My Project",
+    submitting: "Submitting...",
+  },
+  summary: {
+    title: "Thank You!",
+    subtitle: "We've received your project details and will reach out within 24 hours.",
+    cta: "Back to Home",
+  },
+} as const;
+
+// ─────────────────────────────────────────────────────────
+// UI Strings — Contact
+// ─────────────────────────────────────────────────────────
+
+export const CONTACT_STRINGS = {
+  eyebrow: "Get in Touch",
+  title: "Let's Start a Conversation",
+  subtitle:
+    "Whether you have a full brief or just an idea, we'd love to hear from you. Our team will respond within one business day.",
+  form: {
+    name: "Full Name",
+    email: "Email Address",
+    phone: "Phone Number (optional)",
+    service: "Service of Interest",
+    message: "Your Message",
+    messagePlaceholder: "Tell us about your project or ask us anything...",
+    submit: "Send Message",
+    submitting: "Sending...",
+    success: "Message sent! We'll be in touch shortly.",
+    error: "Something went wrong. Please try again or email us directly.",
+  },
+} as const;
+
+// ─────────────────────────────────────────────────────────
+// UI Strings — About
+// ─────────────────────────────────────────────────────────
+
+export const ABOUT_STRINGS = {
+  eyebrow: "Our Story",
+  title: "We Built This Company Around One Belief:",
+  titleAccent: "Technology Should Be Invisible.",
+  story:
+    "Founded in Los Angeles over a decade ago, 360 Integrated Systems was born from a frustration with the industry standard — systems that were complicated to use, ugly to look at, and fell apart without constant service calls. We set out to do the opposite: design solutions that disappear into your life, work flawlessly from day one, and are backed by a team that answers the phone.",
+  teamTitle: "The Team Behind Every Project",
+  valuesTitle: "Our Values",
+  values: [
+    { icon: "Eye", title: "Invisible by Design", description: "The best technology is the kind you never think about." },
+    { icon: "Zap", title: "Engineered First", description: "We design before we install. Every project is a custom blueprint." },
+    { icon: "Heart", title: "Long-term Relationships", description: "Most of our clients have been with us for years. We earn that." },
+  ],
+} as const;
+
+// ─────────────────────────────────────────────────────────
+// UI Strings — Footer
+// ─────────────────────────────────────────────────────────
+
+export const FOOTER_STRINGS = {
+  tagline: "World-class integration for those who expect nothing less.",
+  copyright: `© ${new Date().getFullYear()} 360 Integrated Systems. All rights reserved.`,
+  columns: {
+    services: "Services",
+    company: "Company",
+    contact: "Contact",
+  },
+  companyLinks: [
+    { label: "About", href: "/about" },
+    { label: "Projects", href: "/projects" },
+    { label: "Contact", href: "/contact" },
+    { label: "Project Planner", href: "/planner" },
+  ],
+  legalLinks: [
+    { label: "Privacy Policy", href: "/privacy" },
+    { label: "Terms of Service", href: "/terms" },
+  ],
+} as const;
+
+// ─────────────────────────────────────────────────────────
+// Shared / Misc
+// ─────────────────────────────────────────────────────────
+
+export const SHARED_STRINGS = {
+  learnMore: "Learn More",
+  viewProject: "View Project",
+  backToProjects: "← Back to Projects",
+  backToServices: "← Back to Services",
+  loading: "Loading...",
+  error: "Something went wrong.",
+  notFound: "Page not found.",
+} as const;

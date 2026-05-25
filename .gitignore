@@ -39,3 +39,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local dev artifacts — not project source
+cctv-handoff/
+cctv-handoff.zip
+cctv 2/
+PROJECT_CONTEXT.md
+ChatGPT\ Image*.png
