@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Service } from "@/types";
 import { SERVICES_STRINGS } from "@/lib/constants";
+import { resolveProjectImage } from "@/lib/utils";
 
 interface ServiceHeroProps {
   service: Service;
@@ -24,7 +25,7 @@ export default function ServiceHero({ service }: ServiceHeroProps) {
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: `url(https://images.unsplash.com/${service.heroUnsplashId}?auto=format&fit=crop&w=1920&q=72)`,
+          backgroundImage: `url(${resolveProjectImage(service.heroUnsplashId, "auto=format&fit=crop&w=1920&q=72")})`,
           backgroundSize: "cover",
           backgroundPosition: "center 35%",
           zIndex: 0,

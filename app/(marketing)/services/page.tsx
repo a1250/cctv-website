@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SERVICES, SERVICES_STRINGS } from "@/lib/constants";
+import { resolveProjectImage } from "@/lib/utils";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
@@ -120,7 +121,7 @@ export default function ServicesOverviewPage() {
                   style={{
                     position: "absolute",
                     inset: 0,
-                    backgroundImage: `url(https://images.unsplash.com/${service.unsplashId}?auto=format&fit=crop&w=600&q=55)`,
+                    backgroundImage: `url(${resolveProjectImage(service.unsplashId, "auto=format&fit=crop&w=600&q=55")})`,
                     backgroundSize: "cover",
                     backgroundPosition: "center",
                     zIndex: 0,

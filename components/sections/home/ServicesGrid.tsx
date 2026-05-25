@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SERVICES, HOME_STRINGS } from "@/lib/constants";
+import { resolveProjectImage } from "@/lib/utils";
 
 /* Custom SVG service icons — composed only from geometric primitives */
 function ServiceIcon({ kind }: { kind: string }) {
@@ -192,7 +193,7 @@ export default function ServicesGrid() {
               style={{
                 position: "absolute",
                 inset: 0,
-                backgroundImage: `url(https://images.unsplash.com/${service.unsplashId}?auto=format&fit=crop&w=800&q=65)`,
+                backgroundImage: `url(${resolveProjectImage(service.unsplashId, "auto=format&fit=crop&w=800&q=65")})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 zIndex: 0,

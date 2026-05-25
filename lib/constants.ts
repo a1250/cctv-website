@@ -65,8 +65,8 @@ export const SERVICES = [
       "Concealed & aesthetic mounting",
     ],
     icon: "Camera",
-    unsplashId: "photo-1557597774-9d273605dfa9",
-    heroUnsplashId: "photo-1558002038-1055907df827",
+    unsplashId: "/images/surveillance-analytics.png",
+    heroUnsplashId: "/images/surveillance-analytics.png",
   },
   {
     slug: "alarm-systems" as ServiceSlug,
@@ -83,8 +83,8 @@ export const SERVICES = [
       "Smart home & voice integration",
     ],
     icon: "Shield",
-    unsplashId: "photo-1582139329536-e7284fece509",
-    heroUnsplashId: "photo-1560185007-c5ca9d2c014d",
+    unsplashId: "/images/smart-intrusion-alarms.png",
+    heroUnsplashId: "/images/smart-intrusion-alarms.png",
   },
   {
     slug: "intercom-access" as ServiceSlug,
@@ -101,8 +101,8 @@ export const SERVICES = [
       "Full audit trail & reporting",
     ],
     icon: "Fingerprint",
-    unsplashId: "photo-1563013544-824ae1b704d3",
-    heroUnsplashId: "photo-1506157786151-b8491531f063",
+    unsplashId: "/images/access-control-intercom.png",
+    heroUnsplashId: "/images/access-control-intercom.png",
   },
   {
     slug: "networks-wifi" as ServiceSlug,
@@ -119,8 +119,8 @@ export const SERVICES = [
       "Network monitoring & SLA",
     ],
     icon: "Wifi",
-    unsplashId: "photo-1558494949-ef010cbdcc31",
-    heroUnsplashId: "photo-1544383835-bda2bc66a55d",
+    unsplashId: "/images/enterprise-networking-integration.png",
+    heroUnsplashId: "/images/enterprise-networking-integration.png",
   },
   {
     slug: "sound-systems" as ServiceSlug,
@@ -137,8 +137,8 @@ export const SERVICES = [
       "Acoustic room calibration",
     ],
     icon: "Music",
-    unsplashId: "photo-1545454675-3531b543be5d",
-    heroUnsplashId: "photo-1618221195710-dd6b41faaea6",
+    unsplashId: "/images/bespoke-architectural-audio.png",
+    heroUnsplashId: "/images/bespoke-architectural-audio.png",
   },
   {
     slug: "home-cinema" as ServiceSlug,
@@ -155,8 +155,8 @@ export const SERVICES = [
       "Full lighting scene control",
     ],
     icon: "Tv",
-    unsplashId: "photo-1586023492125-27b2c045efd7",
-    heroUnsplashId: "photo-1595769816263-9b910be24d5f",
+    unsplashId: "/images/private-home-cinema.png",
+    heroUnsplashId: "/images/private-home-cinema.png",
   },
 ] as const;
 
