@@ -51,9 +51,9 @@ export default function Navbar() {
             {/* Plain img — Next.js Image wrapper breaks mix-blend-mode */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/logo-header.png"
+              src="/header-logo.png"
               alt="360 Integrated Systems Logo"
-              className="mix-blend-screen object-contain w-auto"
+              className="header-logo-img mix-blend-screen object-contain w-auto"
               style={{ height: 36 }}
             />
           </Link>
@@ -150,6 +150,7 @@ export default function Navbar() {
             grid-template-columns: 1fr auto !important;
             padding: 16px 22px !important;
           }
+          .header-logo-img { height: 28px !important; }
         }
         .nav-link-item::after {
           content: "";

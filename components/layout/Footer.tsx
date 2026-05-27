@@ -26,10 +26,10 @@ export default function Footer() {
           {/* Plain img — Next.js Image wrapper breaks mix-blend-mode */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/logo-footer.png"
+            src="/footer-logo.png"
             alt="360 Integrated Systems Logo"
-            className="mix-blend-screen object-contain w-auto"
-            style={{ height: 52 }}
+            className="footer-logo-img mix-blend-screen object-contain"
+            style={{ width: 240, height: "auto" }}
           />
           <div
             style={{
@@ -125,10 +125,12 @@ export default function Footer() {
         @media (max-width: 720px) {
           .footer-top-responsive { flex-direction: column; align-items: flex-start; gap: 28px; }
           .footer-nav-responsive { gap: 20px 28px; }
+          .footer-logo-img { width: 180px !important; }
         }
         @media (max-width: 480px) {
           footer { padding: 48px 22px 28px !important; }
           .footer-bottom-responsive { flex-direction: column; align-items: flex-start; gap: 10px; }
+          .footer-logo-img { width: 160px !important; }
         }
       `}</style>
     </footer>
