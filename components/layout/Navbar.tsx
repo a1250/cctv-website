@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { NAV_LINKS, NAV_CTA, COMPANY } from "@/lib/constants";
-import LogoImage from "./LogoImage";
 import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
@@ -49,7 +48,14 @@ export default function Navbar() {
               color: "inherit",
             }}
           >
-            <LogoImage src="/logo-header.png" height={40} blendScreen />
+            {/* Plain img — Next.js Image wrapper breaks mix-blend-mode */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/logo-header.png"
+              alt="360 Integrated Systems Logo"
+              className="mix-blend-screen object-contain w-auto"
+              style={{ height: 36 }}
+            />
           </Link>
 
           {/* Desktop nav links — center */}

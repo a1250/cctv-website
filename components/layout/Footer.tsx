@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { NAV_LINKS, FOOTER_STRINGS } from "@/lib/constants";
-import LogoImage from "./LogoImage";
 
 export default function Footer() {
   return (
@@ -24,7 +23,14 @@ export default function Footer() {
       >
         {/* Brand */}
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          <LogoImage src="/logo-footer.png" height={56} blendScreen />
+          {/* Plain img — Next.js Image wrapper breaks mix-blend-mode */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo-footer.png"
+            alt="360 Integrated Systems Logo"
+            className="mix-blend-screen object-contain w-auto"
+            style={{ height: 52 }}
+          />
           <div
             style={{
               fontFamily: "var(--font-mono, monospace)",
