@@ -51,7 +51,7 @@ export default function Navbar() {
             {/* Plain img — Next.js Image wrapper creates isolating compositing layer */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/header-360-transparent.webp"
+              src="/header-360-integrated-systems-optimized.webp"
               alt="360 Integrated Systems Logo"
               className="header-logo-img"
               style={{ height: 32, width: "auto", display: "block", objectFit: "contain", background: "transparent" }}
