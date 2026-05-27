@@ -7,20 +7,23 @@ import { COMPANY } from "@/lib/constants";
 
 interface LogoImageProps {
   height?: number;
+  src?: string;
   className?: string;
+  blendScreen?: boolean;
 }
 
-export default function LogoImage({ height = 36, className = "" }: LogoImageProps) {
+export default function LogoImage({
+  height = 36,
+  src,
+  className = "",
+  blendScreen = false,
+}: LogoImageProps) {
   const [err, setErr] = useState(false);
 
   if (err) {
     return (
       <span
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: 12,
-        }}
+        style={{ display: "flex", alignItems: "center", gap: 12 }}
         className={className}
       >
         <BrandMark size={Math.round(height * 0.9)} />
@@ -41,7 +44,7 @@ export default function LogoImage({ height = 36, className = "" }: LogoImageProp
 
   return (
     <Image
-      src={COMPANY.logoSrc}
+      src={src ?? COMPANY.logoSrc}
       alt="360 Integrated Systems Logo"
       width={320}
       height={80}
@@ -53,7 +56,7 @@ export default function LogoImage({ height = 36, className = "" }: LogoImageProp
         width: "auto",
         objectFit: "contain",
         objectPosition: "left center",
-        filter: "drop-shadow(0 0 16px rgba(222,194,155,0.20))",
+        mixBlendMode: blendScreen ? "screen" : undefined,
       }}
     />
   );

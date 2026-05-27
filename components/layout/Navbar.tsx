@@ -49,7 +49,7 @@ export default function Navbar() {
               color: "inherit",
             }}
           >
-            <LogoImage height={44} />
+            <LogoImage src="/logo-header.png" height={40} blendScreen />
           </Link>
 
           {/* Desktop nav links — center */}
