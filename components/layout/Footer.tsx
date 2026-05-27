@@ -24,7 +24,7 @@ export default function Footer() {
       >
         {/* Brand */}
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          <LogoImage height={40} />
+          <LogoImage height={48} />
           <div
             style={{
               fontFamily: "var(--font-mono, monospace)",

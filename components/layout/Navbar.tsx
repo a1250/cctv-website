@@ -49,7 +49,7 @@ export default function Navbar() {
               color: "inherit",
             }}
           >
-            <LogoImage height={36} />
+            <LogoImage height={44} />
           </Link>
 
           {/* Desktop nav links — center */}

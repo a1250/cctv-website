@@ -42,10 +42,9 @@ export default function LogoImage({ height = 36, className = "" }: LogoImageProp
   return (
     <Image
       src={COMPANY.logoSrc}
-      alt={COMPANY.name}
-      width={220}
-      height={52}
-      unoptimized
+      alt="360 Integrated Systems Logo"
+      width={320}
+      height={80}
       priority
       onError={() => setErr(true)}
       className={className}
@@ -54,7 +53,7 @@ export default function LogoImage({ height = 36, className = "" }: LogoImageProp
         width: "auto",
         objectFit: "contain",
         objectPosition: "left center",
-        filter: "drop-shadow(0 0 14px rgba(212,184,150,0.16))",
+        filter: "drop-shadow(0 0 16px rgba(222,194,155,0.20))",
       }}
     />
   );
