@@ -48,13 +48,13 @@ export default function Navbar() {
               color: "inherit",
             }}
           >
-            {/* Plain img — Next.js Image wrapper breaks mix-blend-mode */}
+            {/* Plain img — Next.js Image wrapper creates isolating compositing layer */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="/header-logo.png"
+              src="/header-360-transparent.webp"
               alt="360 Integrated Systems Logo"
-              className="header-logo-img mix-blend-screen object-contain w-auto"
-              style={{ height: 36 }}
+              className="header-logo-img"
+              style={{ height: 32, width: "auto", display: "block", objectFit: "contain", background: "transparent" }}
             />
           </Link>
 
@@ -150,7 +150,7 @@ export default function Navbar() {
             grid-template-columns: 1fr auto !important;
             padding: 16px 22px !important;
           }
-          .header-logo-img { height: 28px !important; }
+          .header-logo-img { height: 26px !important; }
         }
         .nav-link-item::after {
           content: "";

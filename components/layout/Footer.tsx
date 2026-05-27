@@ -23,13 +23,13 @@ export default function Footer() {
       >
         {/* Brand */}
         <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
-          {/* Plain img — Next.js Image wrapper breaks mix-blend-mode */}
+          {/* Plain img — Next.js Image wrapper creates isolating compositing layer */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/footer-logo.png"
+            src="/footer-360-integrated-transparent.webp"
             alt="360 Integrated Systems Logo"
-            className="footer-logo-img mix-blend-screen object-contain"
-            style={{ width: 240, height: "auto" }}
+            className="footer-logo-img"
+            style={{ width: 240, height: "auto", display: "block", objectFit: "contain", background: "transparent" }}
           />
           <div
             style={{
@@ -125,12 +125,12 @@ export default function Footer() {
         @media (max-width: 720px) {
           .footer-top-responsive { flex-direction: column; align-items: flex-start; gap: 28px; }
           .footer-nav-responsive { gap: 20px 28px; }
-          .footer-logo-img { width: 180px !important; }
+          .footer-logo-img { width: 190px !important; }
         }
         @media (max-width: 480px) {
           footer { padding: 48px 22px 28px !important; }
           .footer-bottom-responsive { flex-direction: column; align-items: flex-start; gap: 10px; }
-          .footer-logo-img { width: 160px !important; }
+          .footer-logo-img { width: 170px !important; }
         }
       `}</style>
     </footer>
