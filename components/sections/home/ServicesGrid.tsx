@@ -188,163 +188,246 @@ export default function ServicesGrid() {
         }}
         className="services-grid-responsive"
       >
-        {SERVICES.map((service, i) => (
-          <Link
-            key={service.slug}
-            href={`/services/${service.slug}`}
-            style={{
-              position: "relative",
-              padding: "44px 36px 96px",
-              minHeight: 340,
-              overflow: "hidden",
-              display: "block",
-              textDecoration: "none",
-              color: "inherit",
-            }}
-            className="service-card"
-          >
-            {/* Layer 1 — Unsplash cinematic background image */}
-            <span
-              aria-hidden="true"
+        {SERVICES.map((service, i) => {
+          const isWide = i === SERVICES.length - 1;
+          return (
+            <Link
+              key={service.slug}
+              href={`/services/${service.slug}`}
               style={{
-                position: "absolute",
-                inset: 0,
-                backgroundImage: `url(${resolveProjectImage(service.unsplashId, "auto=format&fit=crop&w=800&q=65")})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                zIndex: 0,
+                position: "relative",
+                padding: isWide ? "44px 56px" : "44px 36px 96px",
+                minHeight: isWide ? 200 : 340,
+                overflow: "hidden",
+                display: "block",
+                textDecoration: "none",
+                color: "inherit",
+                gridColumn: isWide ? "1 / -1" : undefined,
               }}
-            />
-
-            {/* Layer 2 — Frosted glass dark overlay */}
-            <span
-              aria-hidden="true"
-              className="card-glass"
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: "rgba(6,7,12,0.62)",
-                WebkitBackdropFilter: "blur(20px) saturate(130%)",
-                backdropFilter: "blur(20px) saturate(130%)",
-                zIndex: 1,
-              }}
-            />
-
-            {/* Layer 3 — Champagne gradient vignette (bottom-up) */}
-            <span
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: "linear-gradient(to top, rgba(212,184,150,0.07) 0%, transparent 50%)",
-                zIndex: 2,
-                pointerEvents: "none",
-              }}
-            />
-
-            {/* Content — sits above all layers */}
-            <div style={{ position: "relative", zIndex: 3, height: "100%" }}>
-              {/* Index */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  right: 0,
-                  fontFamily: "var(--font-mono, monospace)",
-                  fontSize: "10.5px",
-                  letterSpacing: "0.22em",
-                  color: "var(--ink-3)",
-                }}
-              >
-                {String(i + 1).padStart(2, "0")}
-              </div>
-
-              {/* Icon */}
-              <div
-                style={{
-                  color: "var(--champagne, #d4b896)",
-                  marginBottom: 40,
-                }}
-                className="card-icon-inner"
-              >
-                <ServiceIcon kind={service.slug} />
-              </div>
-
-              {/* Title */}
-              <h3
-                style={{
-                  fontFamily: "var(--font-heading, 'Cormorant Garamond', serif)",
-                  fontWeight: 400,
-                  fontSize: 26,
-                  lineHeight: 1.2,
-                  color: "var(--ink)",
-                  margin: "0 0 14px",
-                }}
-              >
-                {service.name}
-              </h3>
-
-              {/* Description */}
-              <p
-                style={{
-                  fontFamily: "var(--font-sans)",
-                  fontWeight: 300,
-                  fontSize: "13.5px",
-                  lineHeight: 1.65,
-                  color: "var(--ink-2)",
-                  margin: 0,
-                }}
-              >
-                {service.shortDescription}
-              </p>
-
-              {/* Arrow */}
+              className="service-card"
+            >
+              {/* Layer 1 — background image */}
               <span
                 aria-hidden="true"
                 style={{
                   position: "absolute",
-                  bottom: 0,
-                  right: 0,
-                  display: "block",
-                  width: 18,
-                  height: 1,
-                  background: "var(--ink-3)",
+                  inset: 0,
+                  backgroundImage: `url(${resolveProjectImage(service.unsplashId, "auto=format&fit=crop&w=800&q=65")})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  zIndex: 0,
                 }}
-                className="card-arrow-inner"
-              >
-                <span
+              />
+
+              {/* Layer 2 — frosted glass overlay */}
+              <span
+                aria-hidden="true"
+                className="card-glass"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: "rgba(6,7,12,0.62)",
+                  WebkitBackdropFilter: "blur(20px) saturate(130%)",
+                  backdropFilter: "blur(20px) saturate(130%)",
+                  zIndex: 1,
+                }}
+              />
+
+              {/* Layer 3 — champagne vignette */}
+              <span
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: "linear-gradient(to top, rgba(212,184,150,0.07) 0%, transparent 50%)",
+                  zIndex: 2,
+                  pointerEvents: "none",
+                }}
+              />
+
+              {/* Content */}
+              <div style={{ position: "relative", zIndex: 3, height: "100%" }}>
+                {/* Index */}
+                <div
                   style={{
                     position: "absolute",
+                    top: 0,
                     right: 0,
-                    top: "50%",
-                    width: 6,
-                    height: 6,
-                    borderTop: "1px solid var(--ink-3)",
-                    borderRight: "1px solid var(--ink-3)",
-                    transform: "translateY(-50%) rotate(45deg)",
-                    display: "block",
+                    fontFamily: "var(--font-mono, monospace)",
+                    fontSize: "10.5px",
+                    letterSpacing: "0.22em",
+                    color: "var(--ink-3)",
                   }}
-                  className="card-arrow-tip"
-                />
-              </span>
-            </div>
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </div>
 
-            {/* Hover champagne gradient reveal */}
-            <span
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                inset: 0,
-                background: "linear-gradient(160deg, rgba(212,184,150,0.10), rgba(212,184,150,0) 55%)",
-                opacity: 0,
-                transition: "opacity .5s ease",
-                pointerEvents: "none",
-                zIndex: 4,
-              }}
-              className="card-hover-bg"
-            />
-          </Link>
-        ))}
+                {isWide ? (
+                  /* ── Wide (full-row) layout ── */
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 64,
+                      height: "100%",
+                    }}
+                    className="card-wide-inner"
+                  >
+                    {/* Icon */}
+                    <div
+                      style={{ color: "var(--champagne, #d4b896)", flexShrink: 0 }}
+                      className="card-icon-inner"
+                    >
+                      <ServiceIcon kind={service.slug} />
+                    </div>
+
+                    {/* Text group */}
+                    <div style={{ flex: 1 }}>
+                      <h3
+                        style={{
+                          fontFamily: "var(--font-heading, 'Cormorant Garamond', serif)",
+                          fontWeight: 400,
+                          fontSize: 26,
+                          lineHeight: 1.2,
+                          color: "var(--ink)",
+                          margin: "0 0 12px",
+                        }}
+                      >
+                        {service.name}
+                      </h3>
+                      <p
+                        style={{
+                          fontFamily: "var(--font-sans)",
+                          fontWeight: 300,
+                          fontSize: "13.5px",
+                          lineHeight: 1.65,
+                          color: "var(--ink-2)",
+                          margin: 0,
+                          maxWidth: 640,
+                        }}
+                      >
+                        {service.shortDescription}
+                      </p>
+                    </div>
+
+                    {/* Arrow — far right */}
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        display: "block",
+                        width: 18,
+                        height: 1,
+                        background: "var(--ink-3)",
+                        flexShrink: 0,
+                        position: "relative",
+                      }}
+                      className="card-arrow-inner"
+                    >
+                      <span
+                        style={{
+                          position: "absolute",
+                          right: 0,
+                          top: "50%",
+                          width: 6,
+                          height: 6,
+                          borderTop: "1px solid var(--ink-3)",
+                          borderRight: "1px solid var(--ink-3)",
+                          transform: "translateY(-50%) rotate(45deg)",
+                          display: "block",
+                        }}
+                        className="card-arrow-tip"
+                      />
+                    </span>
+                  </div>
+                ) : (
+                  /* ── Standard card layout ── */
+                  <>
+                    {/* Icon */}
+                    <div
+                      style={{ color: "var(--champagne, #d4b896)", marginBottom: 40 }}
+                      className="card-icon-inner"
+                    >
+                      <ServiceIcon kind={service.slug} />
+                    </div>
+
+                    {/* Title */}
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-heading, 'Cormorant Garamond', serif)",
+                        fontWeight: 400,
+                        fontSize: 26,
+                        lineHeight: 1.2,
+                        color: "var(--ink)",
+                        margin: "0 0 14px",
+                      }}
+                    >
+                      {service.name}
+                    </h3>
+
+                    {/* Description */}
+                    <p
+                      style={{
+                        fontFamily: "var(--font-sans)",
+                        fontWeight: 300,
+                        fontSize: "13.5px",
+                        lineHeight: 1.65,
+                        color: "var(--ink-2)",
+                        margin: 0,
+                      }}
+                    >
+                      {service.shortDescription}
+                    </p>
+
+                    {/* Arrow */}
+                    <span
+                      aria-hidden="true"
+                      style={{
+                        position: "absolute",
+                        bottom: 0,
+                        right: 0,
+                        display: "block",
+                        width: 18,
+                        height: 1,
+                        background: "var(--ink-3)",
+                      }}
+                      className="card-arrow-inner"
+                    >
+                      <span
+                        style={{
+                          position: "absolute",
+                          right: 0,
+                          top: "50%",
+                          width: 6,
+                          height: 6,
+                          borderTop: "1px solid var(--ink-3)",
+                          borderRight: "1px solid var(--ink-3)",
+                          transform: "translateY(-50%) rotate(45deg)",
+                          display: "block",
+                        }}
+                        className="card-arrow-tip"
+                      />
+                    </span>
+                  </>
+                )}
+              </div>
+
+              {/* Hover champagne gradient reveal */}
+              <span
+                aria-hidden="true"
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  background: "linear-gradient(160deg, rgba(212,184,150,0.10), rgba(212,184,150,0) 55%)",
+                  opacity: 0,
+                  transition: "opacity .5s ease",
+                  pointerEvents: "none",
+                  zIndex: 4,
+                }}
+                className="card-hover-bg"
+              />
+            </Link>
+          );
+        })}
       </div>
 
       <style>{`
@@ -369,10 +452,13 @@ export default function ServicesGrid() {
         }
         @media (max-width: 1100px) {
           .services-grid-responsive { grid-template-columns: repeat(2, 1fr) !important; }
+          /* On 2-col tablet the wide card still spans full width */
         }
         @media (max-width: 720px) {
           .services-grid-responsive { grid-template-columns: 1fr !important; }
           .service-card { min-height: auto !important; padding: 36px 28px 80px !important; }
+          /* Collapse wide-card inner row to column on mobile */
+          .card-wide-inner { flex-direction: column !important; align-items: flex-start !important; gap: 28px !important; }
         }
         @media (max-width: 920px) {
           .section-responsive { padding: 100px 28px !important; }
