@@ -137,10 +137,7 @@ export default function AboutPage() {
                 maxWidth: 680,
               }}
             >
-              Today, 360 Integrated Systems operates across Southern California,
-              specialising in pre-construction wiring programs, renovation retrofits, and
-              commercial installations for hotels, corporate campuses, and multi-family
-              developments. Every project is led by a senior engineer — not a salesperson.
+              {ABOUT_STRINGS.story2}
             </p>
           </div>
         </section>

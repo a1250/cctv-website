@@ -106,7 +106,7 @@ export const SERVICES = [
   },
   {
     slug: "networks-wifi" as ServiceSlug,
-    name: "Enterprise Networking",
+    name: "Networking",
     shortDescription: "Carrier-class Wi-Fi, structured cabling, and SD-WAN built for whole-estate reliability and absolute privacy.",
     description:
       "Your smart home is only as smart as its network. We design and deploy carrier-grade Wi-Fi 7 mesh networks with wired backbone infrastructure, VLAN segmentation for security, and zero-lag coverage across every square foot — indoors, outdoors, and underground.",
@@ -124,7 +124,7 @@ export const SERVICES = [
   },
   {
     slug: "sound-systems" as ServiceSlug,
-    name: "Bespoke Architectural Audio",
+    name: "Audio",
     shortDescription: "Invisible in-wall and in-ceiling speakers, tuned per room by certified acousticians for reference performance.",
     description:
       "We integrate premium distributed audio systems from Sonos, Bowers & Wilkins, and KEF that deliver concert-hall clarity in every room. Whether you want room-by-room control, synchronized whole-home audio, or a dedicated dedicated listening room, we design it to disappear into the architecture.",
@@ -142,7 +142,7 @@ export const SERVICES = [
   },
   {
     slug: "home-cinema" as ServiceSlug,
-    name: "Bespoke Theater Rooms",
+    name: "Theater Rooms",
     shortDescription: "Design and calibration of elite private theater rooms featuring completely flush-mounted in-wall speakers, high-performance sound isolation, and architectural fabric acoustic paneling for an uncompromised residential viewing experience.",
     description:
       "Design and calibration of elite private theater rooms featuring completely flush-mounted in-wall speakers, high-performance sound isolation, and architectural fabric acoustic paneling for an uncompromised residential viewing experience.",
@@ -454,7 +454,9 @@ export const ABOUT_STRINGS = {
   title: "We Built This Company Around One Belief:",
   titleAccent: "Technology Should Be Invisible.",
   story:
-    "Founded in Los Angeles over a decade ago, 360 Integrated Systems was born from a frustration with the industry standard — systems that were complicated to use, ugly to look at, and fell apart without constant service calls. We set out to do the opposite: design solutions that disappear into your life, work flawlessly from day one, and are backed by a team that answers the phone.",
+    "Established internationally for over a decade, 360 AlphaVolt Systems was born from a frustration with the industry standard — systems that were complicated to use, ugly to look at, and fell apart without constant service calls. We set out to do the opposite: design solutions that disappear into your life, work flawlessly from day one, and are backed by a team that answers the phone.",
+  story2:
+    "Today, 360 AlphaVolt Systems delivers pristine engineering across our core sectors, specializing in pre-construction wiring programs, renovation retrofits, and elite residential installations. Every project is led by a senior engineer — not a salesperson.",
   teamTitle: "The Team Behind Every Project",
   valuesTitle: "Our Values",
   values: [
