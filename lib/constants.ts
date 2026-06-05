@@ -264,7 +264,7 @@ export const HOME_STRINGS = {
     headline: "Smart Integration.",
     headlineAccent: "Cinematic Luxury.",
     subheadline:
-      "Bespoke low-voltage systems engineered for elite residences. Surveillance, automated security, enterprise networking, and immersive home cinema.",
+      "Custom low-voltage solutions for luxury homes, including security cameras, smart home automation, networking, access control, and home theater systems.",
     primaryCta: "Launch Project Planner",
     secondaryCta: "Explore Solutions",
     telemetry: {
