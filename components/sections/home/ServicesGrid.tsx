@@ -82,6 +82,22 @@ function ServiceIcon({ kind }: { kind: string }) {
           <path d="M26 15 L34 11 V29 L26 25 Z" />
         </svg>
       );
+    case "led-lighting":
+      return (
+        <svg {...common}>
+          <circle cx="20" cy="16" r="8" />
+          <line x1="20" y1="4" x2="20" y2="7" />
+          <line x1="20" y1="33" x2="20" y2="36" />
+          <line x1="8" y1="8" x2="10.1" y2="10.1" />
+          <line x1="29.9" y1="21.9" x2="32" y2="24" />
+          <line x1="4" y1="16" x2="7" y2="16" />
+          <line x1="33" y1="16" x2="36" y2="16" />
+          <line x1="8" y1="24" x2="10.1" y2="21.9" />
+          <line x1="29.9" y1="10.1" x2="32" y2="8" />
+          <line x1="15" y1="25" x2="25" y2="25" />
+          <line x1="16" y1="28.5" x2="24" y2="28.5" />
+        </svg>
+      );
     default:
       return null;
   }

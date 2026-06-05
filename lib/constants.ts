@@ -11,16 +11,16 @@
 // ─────────────────────────────────────────────────────────
 
 export const COMPANY = {
-  name: "360 Integrated Systems",
+  name: "360 LowVolt",
   tagline: "Precision. Performance. Presence.",
   phone: "+1 (800) 555-0199",
-  email: "projects@360integrated.com",
+  email: "projects@360lowvolt.com",
   address: "Beverly Hills, CA 90210",
   logoSrc: "/logo.png",
   logoEmblemSrc: "/logo-emblem.png",
   social: {
-    instagram: "https://instagram.com/360integrated",
-    linkedin: "https://linkedin.com/company/360integrated",
+    instagram: "https://instagram.com/360lowvolt",
+    linkedin: "https://linkedin.com/company/360lowvolt",
   },
 } as const;
 
@@ -47,12 +47,13 @@ export type ServiceSlug =
   | "intercom-access"
   | "networks-wifi"
   | "sound-systems"
-  | "home-cinema";
+  | "home-cinema"
+  | "led-lighting";
 
 export const SERVICES = [
   {
     slug: "cameras" as ServiceSlug,
-    name: "Surveillance & Analytics",
+    name: "Security Cameras",
     shortDescription: "Discreet camera systems with AI-driven event detection and forensic-grade recording — engineered to disappear into the architecture.",
     description:
       "We design and install enterprise-grade camera systems that go far beyond passive recording. Our solutions leverage AI analytics, license plate recognition, facial detection, and behavioral monitoring to give you a proactive security layer — not just a record of what happened.",
@@ -70,16 +71,16 @@ export const SERVICES = [
   },
   {
     slug: "alarm-systems" as ServiceSlug,
-    name: "Smart Intrusion Alarms",
-    shortDescription: "Multi-zone perimeter protection woven into the residence routine, with personal device alerting and silent escalation paths.",
+    name: "Access Control",
+    shortDescription: "Multi-zone perimeter protection and intelligent entry management woven seamlessly into the residence, with mobile alerting and silent escalation paths.",
     description:
-      "From perimeter detection to interior motion analytics, our alarm systems are engineered to be nearly invisible and completely intelligent. Integration with smart home platforms means arming, disarming, and alert routing happen automatically — without you lifting a finger.",
+      "From perimeter detection to keyless entry, our access control systems are engineered to be nearly invisible and completely intelligent. Integration with smart home platforms means arming, disarming, and alert routing happen automatically — without you lifting a finger.",
     features: [
-      "Pet-immune motion detectors",
-      "Glass-break & vibration sensors",
+      "Keyless & mobile credential entry",
+      "Multi-zone perimeter protection",
       "24/7 professional monitoring",
       "Geo-fence auto arm/disarm",
-      "Tamper-proof panels",
+      "Tamper-proof control panels",
       "Smart home & voice integration",
     ],
     icon: "Shield",
@@ -88,8 +89,8 @@ export const SERVICES = [
   },
   {
     slug: "intercom-access" as ServiceSlug,
-    name: "Access Control & Intercom",
-    shortDescription: "Architectural door stations, biometric entry, and HD video intercom delivered over private, hardened networks.",
+    name: "Intercom",
+    shortDescription: "Architectural door stations, HD video intercom, and biometric entry delivered over private, hardened networks.",
     description:
       "We replace outdated keys and buzzers with sophisticated, touchless access control. Video intercoms with facial recognition, mobile-credential readers, and enterprise-grade audit trails — all managed from a single dashboard accessible from anywhere in the world.",
     features: [
@@ -106,7 +107,7 @@ export const SERVICES = [
   },
   {
     slug: "networks-wifi" as ServiceSlug,
-    name: "Networking",
+    name: "Network",
     shortDescription: "Carrier-class Wi-Fi, structured cabling, and SD-WAN built for whole-estate reliability and absolute privacy.",
     description:
       "Your smart home is only as smart as its network. We design and deploy carrier-grade Wi-Fi 7 mesh networks with wired backbone infrastructure, VLAN segmentation for security, and zero-lag coverage across every square foot — indoors, outdoors, and underground.",
@@ -155,6 +156,24 @@ export const SERVICES = [
       "Full lighting scene control",
     ],
     icon: "Tv",
+    unsplashId: "/images/bespoke-theater-rooms.png",
+    heroUnsplashId: "/images/bespoke-theater-rooms.png",
+  },
+  {
+    slug: "led-lighting" as ServiceSlug,
+    name: "LED / Lighting",
+    shortDescription: "Architectural LED and smart lighting systems tuned for ambience, energy efficiency, and seamless scene control throughout every room.",
+    description:
+      "We design and install precision LED and smart lighting systems that transform the mood, function, and beauty of every space. From dynamic circadian-tuned lighting to theatrical scene presets, every fixture is selected and calibrated to complement your architecture — and controlled effortlessly from one app.",
+    features: [
+      "Circadian-tuned LED systems",
+      "Architectural accent & cove lighting",
+      "Smart dimming & scene presets",
+      "Voice & app control",
+      "Outdoor & landscape lighting",
+      "Energy monitoring & automation",
+    ],
+    icon: "Lightbulb",
     unsplashId: "/images/bespoke-theater-rooms.png",
     heroUnsplashId: "/images/bespoke-theater-rooms.png",
   },
@@ -264,7 +283,7 @@ export const HOME_STRINGS = {
     headline: "Smart Integration.",
     headlineAccent: "Cinematic Luxury.",
     subheadline:
-      "Custom low-voltage solutions for luxury homes, including security cameras, smart home automation, networking, access control, and home theater systems.",
+      "Custom low-voltage solutions for luxury homes, including security cameras, smart home automation, network integration, access control, intercom, LED lighting, and theater rooms.",
     primaryCta: "Launch Project Planner",
     secondaryCta: "Explore Solutions",
     telemetry: {
@@ -277,7 +296,7 @@ export const HOME_STRINGS = {
     eyebrow: "01 — Capabilities",
     title: "Integrated",
     titleAccent: "solutions.",
-    subtitle: "Six verticals. One seamless ecosystem.",
+    subtitle: "Seven verticals. One seamless ecosystem.",
   },
   whyUs: {
     eyebrow: "02 — The Standard",
@@ -454,9 +473,9 @@ export const ABOUT_STRINGS = {
   title: "We Built This Company Around One Belief:",
   titleAccent: "Technology Should Be Invisible.",
   story:
-    "Established internationally for over a decade, 360 AlphaVolt Systems was born from a frustration with the industry standard — systems that were complicated to use, ugly to look at, and fell apart without constant service calls. We set out to do the opposite: design solutions that disappear into your life, work flawlessly from day one, and are backed by a team that answers the phone.",
+    "Established internationally for over a decade, 360 LowVolt was born from a frustration with the industry standard — systems that were complicated to use, ugly to look at, and fell apart without constant service calls. We set out to do the opposite: design solutions that disappear into your life, work flawlessly from day one, and are backed by a team that answers the phone.",
   story2:
-    "Today, 360 AlphaVolt Systems delivers pristine engineering across our core sectors, specializing in pre-construction wiring programs, renovation retrofits, and elite residential installations. Every project is led by a senior engineer — not a salesperson.",
+    "Today, 360 LowVolt delivers pristine engineering across our core sectors, specializing in pre-construction wiring programs, renovation retrofits, and elite residential installations. Every project is led by a senior engineer — not a salesperson.",
   teamTitle: "The Team Behind Every Project",
   valuesTitle: "Our Values",
   values: [
@@ -472,7 +491,7 @@ export const ABOUT_STRINGS = {
 
 export const FOOTER_STRINGS = {
   tagline: "World-class integration for those who expect nothing less.",
-  copyright: `© ${new Date().getFullYear()} 360 Integrated Systems. All rights reserved.`,
+  copyright: `© ${new Date().getFullYear()} 360 LowVolt. All rights reserved.`,
   columns: {
     services: "Services",
     company: "Company",

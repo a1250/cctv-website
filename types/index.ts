@@ -10,7 +10,8 @@ export type ServiceSlug =
   | "intercom-access"
   | "networks-wifi"
   | "sound-systems"
-  | "home-cinema";
+  | "home-cinema"
+  | "led-lighting";
 
 export type Service = (typeof SERVICES)[number];
 
