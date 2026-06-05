@@ -370,7 +370,7 @@ export const SERVICES_STRINGS = {
   overview: {
     eyebrow: "Our Services",
     title: "What We Integrate",
-    subtitle: "Six specialized disciplines — each engineered to the highest standard, all working in harmony.",
+    subtitle: "Seven specialized disciplines — each engineered to the highest standard, all working in harmony.",
   },
   serviceHero: {
     breadcrumbRoot: "Services",
