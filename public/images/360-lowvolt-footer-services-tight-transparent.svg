@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="380" viewBox="0 0 980 380" role="img" aria-label="360 LowVolt footer logo with services">
+
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F3D8A5"/>
+      <stop offset="42%" stop-color="#DEC29B"/>
+      <stop offset="72%" stop-color="#9B7A45"/>
+      <stop offset="100%" stop-color="#F3D8A5"/>
+    </linearGradient>
+    <radialGradient id="darkLens" cx="48%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#F3D8A5"/>
+      <stop offset="20%" stop-color="#9B7A45"/>
+      <stop offset="46%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#020202"/>
+    </radialGradient>
+    <style>
+      .num {
+        font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+        font-weight: 200;
+        letter-spacing: -9px;
+      }
+      .brand {
+        font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+        font-weight: 300;
+        letter-spacing: 14px;
+      }
+      .services {
+        font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+        font-weight: 300;
+        letter-spacing: 5px;
+      }
+      .goldStroke {
+        stroke: url(#gold);
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+
+  <!-- TRUE TRANSPARENT BACKGROUND: no rectangle, no checkerboard, no white fill -->
+  <g transform="translate(0 8)">
+    <text x="160" y="150" class="num" font-size="170" fill="url(#gold)">36</text>
+    <g transform="translate(405 116)">
+      <circle r="46" fill="none" stroke="url(#gold)" stroke-width="2.8" opacity=".28"/>
+      <path d="M-33 -19 L-2 -34 L32 -16 L15 8 L-15 9 Z" fill="url(#gold)" opacity=".38"/>
+      <path d="M31 -16 L37 17 L11 34 L-2 9 L15 8 Z" fill="url(#gold)" opacity=".31"/>
+      <path d="M11 34 L-26 30 L-37 4 L-2 9 Z" fill="url(#gold)" opacity=".36"/>
+      <path d="M-37 4 L-33 -19 L-2 -34 L-15 9 Z" fill="url(#gold)" opacity=".25"/>
+    </g>
+    <g transform="translate(605 112)">
+      <circle r="72" fill="none" stroke="url(#gold)" stroke-width="5.5"/>
+      <circle r="52" fill="none" stroke="url(#gold)" stroke-width="1.8" opacity=".65"/>
+      <circle r="37" fill="none" stroke="url(#gold)" stroke-width="1.3" opacity=".52"/>
+      <circle r="26" fill="url(#darkLens)" stroke="url(#gold)" stroke-width="1.2"/>
+      <path d="M-100 0 H-72 M72 0 H100 M0 -100 V-72 M0 72 V100" class="goldStroke" stroke-width="1.8" opacity=".88"/>
+      <path d="M-48 -22 C-27 -37 27 -37 48 -22 M-48 22 C-27 37 27 37 48 22" class="goldStroke" stroke-width="1" opacity=".58"/>
+      <path d="M-94 -54 C-118 -38 -122 -14 -116 0 C-122 14 -118 38 -94 54" class="goldStroke" stroke-width="1" opacity=".48"/>
+      <path d="M94 -54 C118 -38 122 -14 116 0 C122 14 118 38 94 54" class="goldStroke" stroke-width="1" opacity=".48"/>
+      <circle cx="107" cy="-42" r="4.2" fill="none" stroke="url(#gold)" stroke-width="1.5"/>
+      <circle cx="99" cy="62" r="3.8" fill="none" stroke="url(#gold)" stroke-width="1.3"/>
+    </g>
+
+    <line x1="320" y1="235" x2="410" y2="235" stroke="url(#gold)" stroke-width="1.5" opacity=".65"/>
+    <text x="435" y="255" class="brand" font-size="54" fill="url(#gold)">LowVolt</text>
+    <line x1="615" y1="235" x2="705" y2="235" stroke="url(#gold)" stroke-width="1.5" opacity=".65"/>
+
+    <text x="490" y="312" class="services" text-anchor="middle" font-size="18" fill="url(#gold)">
+      THEATER ROOMS · AUDIO · SECURITY CAMERAS · NETWORK · LED LIGHTING
+    </text>
+    <text x="490" y="345" class="services" text-anchor="middle" font-size="18" fill="url(#gold)">
+      INTERCOM · ACCESS CONTROL
+    </text>
+  </g>
+</svg>

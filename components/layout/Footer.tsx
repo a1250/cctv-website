@@ -29,7 +29,7 @@ export default function Footer() {
             src={COMPANY.logoFooterSrc}
             alt={`${COMPANY.name} Logo`}
             className="footer-logo-img"
-            style={{ width: 240, height: "auto", display: "block", objectFit: "contain" }}
+            style={{ width: "100%", maxWidth: 420, height: "auto", display: "block", objectFit: "contain", background: "none", border: "none" }}
           />
           <div
             style={{
@@ -125,12 +125,12 @@ export default function Footer() {
         @media (max-width: 720px) {
           .footer-top-responsive { flex-direction: column; align-items: flex-start; gap: 28px; }
           .footer-nav-responsive { gap: 20px 28px; }
-          .footer-logo-img { width: 190px !important; }
+          .footer-logo-img { max-width: 300px !important; }
         }
         @media (max-width: 480px) {
           footer { padding: 48px 22px 28px !important; }
           .footer-bottom-responsive { flex-direction: column; align-items: flex-start; gap: 10px; }
-          .footer-logo-img { width: 170px !important; }
+          .footer-logo-img { max-width: 240px !important; }
         }
       `}</style>
     </footer>
