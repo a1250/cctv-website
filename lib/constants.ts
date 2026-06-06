@@ -17,8 +17,8 @@ export const COMPANY = {
   email: "projects@360lowvolt.com",
   address: "Beverly Hills, CA 90210",
   logoSrc: "/logo.png",
-  logoHeaderSrc: "/360-lowvolt-header.png",
-  logoFooterSrc: "/360-lowvolt-footer.png",
+  logoHeaderSrc: "/360-lowvolt-header-tight-transparent.svg",
+  logoFooterSrc: "/360-lowvolt-footer-services-tight-transparent.svg",
   logoEmblemSrc: "/logo-emblem.svg",
   social: {
     instagram: "https://instagram.com/360lowvolt",
