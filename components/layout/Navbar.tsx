@@ -54,7 +54,7 @@ export default function Navbar() {
               src={COMPANY.logoHeaderSrc}
               alt={`${COMPANY.name} Logo`}
               className="header-logo-img"
-              style={{ height: 48, width: "auto", display: "block", objectFit: "contain", background: "none", border: "none" }}
+              style={{ height: 42, width: "auto", display: "block", objectFit: "contain", background: "none", border: "none", boxShadow: "none", padding: 0 }}
             />
           </Link>
 
@@ -150,7 +150,7 @@ export default function Navbar() {
             grid-template-columns: 1fr auto !important;
             padding: 16px 22px !important;
           }
-          .header-logo-img { height: 36px !important; }
+          .header-logo-img { height: 34px !important; }
         }
         .nav-link-item::after {
           content: "";

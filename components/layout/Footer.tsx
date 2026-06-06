@@ -22,14 +22,14 @@ export default function Footer() {
         className="footer-top-responsive"
       >
         {/* Brand */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 10, background: "none" }}>
           {/* Plain img — Next.js Image wrapper creates isolating compositing layer */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={COMPANY.logoFooterSrc}
             alt={`${COMPANY.name} Logo`}
             className="footer-logo-img"
-            style={{ width: "100%", maxWidth: 420, height: "auto", display: "block", objectFit: "contain", background: "none", border: "none" }}
+            style={{ width: "100%", maxWidth: 420, height: "auto", display: "block", objectFit: "contain", background: "none", border: "none", boxShadow: "none", padding: 0 }}
           />
           <div
             style={{
