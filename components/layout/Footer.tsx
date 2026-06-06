@@ -29,7 +29,7 @@ export default function Footer() {
             src={COMPANY.logoFooterSrc}
             alt={`${COMPANY.name} Logo`}
             className="footer-logo-img"
-            style={{ width: 240, height: "auto", display: "block", objectFit: "contain", mixBlendMode: "screen" }}
+            style={{ width: 240, height: "auto", display: "block", objectFit: "contain" }}
           />
           <div
             style={{

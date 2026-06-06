@@ -67,7 +67,6 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
             height: "auto",
             display: "block",
             objectFit: "contain",
-            mixBlendMode: "screen",
             margin: "0 auto",
           }}
         />
