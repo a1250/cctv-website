@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NAV_LINKS, FOOTER_STRINGS } from "@/lib/constants";
+import { NAV_LINKS, FOOTER_STRINGS, COMPANY } from "@/lib/constants";
 
 export default function Footer() {
   return (
@@ -26,10 +26,10 @@ export default function Footer() {
           {/* Plain img — Next.js Image wrapper creates isolating compositing layer */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/footer-360-integrated-transparent.webp"
-            alt="360 Integrated Systems Logo"
+            src={COMPANY.logoFooterSrc}
+            alt={`${COMPANY.name} Logo`}
             className="footer-logo-img"
-            style={{ width: 240, height: "auto", display: "block", objectFit: "contain", background: "transparent" }}
+            style={{ width: 240, height: "auto", display: "block", objectFit: "contain", mixBlendMode: "screen" }}
           />
           <div
             style={{

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { NAV_LINKS, NAV_CTA, COMPANY } from "@/lib/constants";
 
 interface MobileMenuProps {
@@ -51,24 +50,26 @@ export default function MobileMenu({ open, onClose }: MobileMenuProps) {
         ✕
       </button>
 
-      {/* Emblem flourish — top-left decorative element */}
+      {/* Brand logo */}
       <div
         style={{
-          position: "absolute",
-          top: 18,
-          left: 22,
-          opacity: 0.55,
-          pointerEvents: "none",
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: 32,
         }}
-        aria-hidden="true"
       >
-        <Image
-          src={COMPANY.logoEmblemSrc}
-          alt=""
-          width={36}
-          height={36}
-          unoptimized
-          style={{ width: 36, height: 36 }}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={COMPANY.logoFooterSrc}
+          alt={`${COMPANY.name} Logo`}
+          style={{
+            width: 180,
+            height: "auto",
+            display: "block",
+            objectFit: "contain",
+            mixBlendMode: "screen",
+            margin: "0 auto",
+          }}
         />
       </div>
 
