@@ -22,14 +22,30 @@ export default function Footer() {
         className="footer-top-responsive"
       >
         {/* Brand */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 0, background: "none" }}>
+        <div
+          style={{ display: "flex", flexDirection: "column", gap: 0, background: "none" }}
+          className="footer-brand-col"
+        >
           {/* Plain img — Next.js Image wrapper creates isolating compositing layer */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={COMPANY.logoFooterSrc}
             alt={`${COMPANY.name} Logo`}
             className="footer-logo-img"
-            style={{ width: "100%", maxWidth: 200, height: "auto", display: "block", objectFit: "contain", background: "none", border: "none", boxShadow: "none", padding: 0 }}
+            style={{
+              width: "100%",
+              maxWidth: 200,
+              height: "auto",
+              display: "block",
+              objectFit: "contain",
+              background: "none",
+              border: "none",
+              boxShadow: "none",
+              padding: 0,
+              WebkitBackfaceVisibility: "hidden",
+              filter: "brightness(1.15) contrast(1.3)",
+              mixBlendMode: "screen",
+            }}
           />
           <div
             style={{
@@ -40,6 +56,7 @@ export default function Footer() {
               textTransform: "uppercase",
               marginTop: 16,
             }}
+            className="footer-tagline"
           >
             {FOOTER_STRINGS.tagline}
           </div>
@@ -123,15 +140,32 @@ export default function Footer() {
 
       <style>{`
         .footer-nav-link:hover { color: var(--ink) !important; }
+        .footer-logo-img {
+          image-rendering: -webkit-optimize-contrast;
+          image-rendering: crisp-edges;
+        }
         @media (max-width: 720px) {
-          .footer-top-responsive { flex-direction: column; align-items: flex-start; gap: 28px; }
-          .footer-nav-responsive { gap: 20px 28px; }
-          .footer-logo-img { max-width: 180px !important; }
+          .footer-top-responsive {
+            flex-direction: column;
+            align-items: center !important;
+            gap: 32px;
+          }
+          .footer-brand-col {
+            align-items: center !important;
+            text-align: center;
+            width: 100%;
+          }
+          .footer-tagline { text-align: center; }
+          .footer-nav-responsive {
+            gap: 16px 28px;
+            justify-content: center;
+          }
+          .footer-logo-img { max-width: 288px !important; }
         }
         @media (max-width: 480px) {
           footer { padding: 48px 22px 28px !important; }
-          .footer-bottom-responsive { flex-direction: column; align-items: flex-start; gap: 10px; }
-          .footer-logo-img { max-width: 160px !important; }
+          .footer-bottom-responsive { flex-direction: column; align-items: center; gap: 10px; text-align: center; }
+          .footer-logo-img { max-width: 260px !important; }
         }
       `}</style>
     </footer>
