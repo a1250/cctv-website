@@ -5,6 +5,13 @@ export default function Footer() {
   return (
     <footer
       style={{
+        width: "100%",
+        background: "linear-gradient(to bottom, transparent 0%, #09090b 72px, #09090b 100%)",
+      }}
+    >
+    <div
+      className="footer-inner"
+      style={{
         maxWidth: 1320,
         margin: "0 auto",
         padding: "64px 40px 36px",
@@ -156,11 +163,12 @@ export default function Footer() {
           .footer-logo-img { max-width: 288px !important; }
         }
         @media (max-width: 480px) {
-          footer { padding: 48px 22px 28px !important; }
+          .footer-inner { padding: 48px 22px 28px !important; }
           .footer-bottom-responsive { flex-direction: column; align-items: center; gap: 10px; text-align: center; }
           .footer-logo-img { max-width: 260px !important; }
         }
       `}</style>
+    </div>
     </footer>
   );
 }
