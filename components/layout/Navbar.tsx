@@ -28,7 +28,7 @@ export default function Navbar() {
           style={{
             maxWidth: 1440,
             margin: "0 auto",
-            padding: "18px 40px",
+            padding: "16px 48px",
             display: "grid",
             gridTemplateColumns: "1fr auto 1fr",
             alignItems: "center",
@@ -148,7 +148,7 @@ export default function Navbar() {
           .nav-burger-btn { display: flex !important; }
           .nav-inner-responsive {
             grid-template-columns: 1fr auto !important;
-            padding: 16px 22px !important;
+            padding: 16px 24px !important;
           }
           .header-logo-img { height: 48px !important; }
         }
