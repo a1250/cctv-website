@@ -1,7 +1,8 @@
 "use client";
 
-const WA_URL =
-  "https://wa.me/972543454955?text=Hi,%20I'm%20interested%20in%20a%20luxury%20integration%20project.";
+import { COMPANY } from "@/lib/constants";
+
+const WA_URL = `https://wa.me/${COMPANY.phoneRaw.replace(/\D/g, "")}?text=Hi,%20I'm%20interested%20in%20a%20luxury%20integration%20project.`;
 
 export default function WhatsAppButton() {
   return (

@@ -142,7 +142,7 @@ export default function ServiceCta() {
             </span>
           </Link>
           <Link
-            href={`tel:${COMPANY.phone}`}
+            href={`tel:${COMPANY.phoneRaw}`}
             style={{
               display: "inline-flex",
               alignItems: "center",

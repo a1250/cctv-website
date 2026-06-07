@@ -113,7 +113,7 @@ export default function ContactPage() {
                 Phone
               </div>
               <Link
-                href={`tel:${COMPANY.phone}`}
+                href={`tel:${COMPANY.phoneRaw}`}
                 style={{
                   fontFamily: "var(--font-heading, 'Cormorant Garamond', serif)",
                   fontWeight: 300,

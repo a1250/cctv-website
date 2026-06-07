@@ -13,7 +13,8 @@
 export const COMPANY = {
   name: "360 LowVolt",
   tagline: "Precision. Performance. Presence.",
-  phone: "+1 (800) 555-0199",
+  phone: "+1 (818) 419-3335",
+  phoneRaw: "+18184193335",
   email: "projects@360lowvolt.com",
   address: "Beverly Hills, CA 90210",
   logoSrc: "/logo.png",
