@@ -42,9 +42,6 @@ export default function Footer() {
               border: "none",
               boxShadow: "none",
               padding: 0,
-              WebkitBackfaceVisibility: "hidden",
-              filter: "brightness(1.15) contrast(1.3)",
-              mixBlendMode: "screen",
             }}
           />
           <div
@@ -140,11 +137,7 @@ export default function Footer() {
 
       <style>{`
         .footer-nav-link:hover { color: var(--ink) !important; }
-        .footer-logo-img {
-          image-rendering: -webkit-optimize-contrast;
-          image-rendering: crisp-edges;
-        }
-        @media (max-width: 720px) {
+@media (max-width: 720px) {
           .footer-top-responsive {
             flex-direction: column;
             align-items: center !important;
