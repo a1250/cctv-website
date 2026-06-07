@@ -18,7 +18,7 @@ export const COMPANY = {
   address: "Beverly Hills, CA 90210",
   logoSrc: "/logo.png",
   logoHeaderSrc: "/images/360-lowvolt-footer-transparent.png",
-  logoFooterSrc: "/images/360-lowvolt-footer-services-transparent.png",
+  logoFooterSrc: "/images/logo-footer-final.png",
   logoEmblemSrc: "/logo-emblem.svg",
   social: {
     instagram: "https://instagram.com/360lowvolt",
