@@ -22,14 +22,14 @@ export default function Footer() {
         className="footer-top-responsive"
       >
         {/* Brand */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 10, background: "none" }}>
+        <div style={{ display: "flex", flexDirection: "column", gap: 0, background: "none" }}>
           {/* Plain img — Next.js Image wrapper creates isolating compositing layer */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={COMPANY.logoFooterSrc}
             alt={`${COMPANY.name} Logo`}
             className="footer-logo-img"
-            style={{ width: "100%", maxWidth: 420, height: "auto", display: "block", objectFit: "contain", background: "none", border: "none", boxShadow: "none", padding: 0 }}
+            style={{ width: "100%", maxWidth: 200, height: "auto", display: "block", objectFit: "contain", background: "none", border: "none", boxShadow: "none", padding: 0 }}
           />
           <div
             style={{
@@ -38,6 +38,7 @@ export default function Footer() {
               letterSpacing: "0.22em",
               color: "var(--ink-3)",
               textTransform: "uppercase",
+              marginTop: 16,
             }}
           >
             {FOOTER_STRINGS.tagline}
@@ -125,12 +126,12 @@ export default function Footer() {
         @media (max-width: 720px) {
           .footer-top-responsive { flex-direction: column; align-items: flex-start; gap: 28px; }
           .footer-nav-responsive { gap: 20px 28px; }
-          .footer-logo-img { max-width: 300px !important; }
+          .footer-logo-img { max-width: 180px !important; }
         }
         @media (max-width: 480px) {
           footer { padding: 48px 22px 28px !important; }
           .footer-bottom-responsive { flex-direction: column; align-items: flex-start; gap: 10px; }
-          .footer-logo-img { max-width: 240px !important; }
+          .footer-logo-img { max-width: 160px !important; }
         }
       `}</style>
     </footer>
