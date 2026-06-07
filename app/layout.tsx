@@ -35,12 +35,17 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "360 Integrated Systems — Premium Low Voltage Integration",
-    template: "%s | 360 Integrated Systems",
+    default: "360 LowVolt — Premium Low Voltage Integration",
+    template: "%s | 360 LowVolt",
   },
   description:
     "World-class security, automation, and AV integration for luxury homes and premium businesses.",
   keywords: ["CCTV", "home automation", "security systems", "smart home", "low voltage"],
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({

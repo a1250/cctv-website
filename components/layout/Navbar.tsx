@@ -54,7 +54,7 @@ export default function Navbar() {
               src={COMPANY.logoHeaderSrc}
               alt={`${COMPANY.name} Logo`}
               className="header-logo-img"
-              style={{ height: 110, width: "auto", display: "block", objectFit: "contain", background: "none", border: "none", boxShadow: "none", padding: 0 }}
+              style={{ height: 110, width: "auto", display: "block", objectFit: "contain", background: "none", border: "none", boxShadow: "none", padding: 0, mixBlendMode: "screen" }}
             />
           </Link>
 
