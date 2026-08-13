@@ -185,8 +185,6 @@ export default function ContactPage() {
                   margin: 0,
                 }}
               >
-                {COMPANY.address}
-                <br />
                 Serving Greater Los Angeles
               </p>
             </div>
